@@ -1,7 +1,6 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import Header from "../components/Header";
 import NewsHomeCard from "../components/NewsHomeCard";
 import { getNewsWithPagination } from "../services/Api";
 
@@ -25,7 +24,6 @@ const Business = () => {
 
     return (
         <div>
-            <Header />
             <InfiniteScroll
                 dataLength={news.length}
                 next={fetchData}

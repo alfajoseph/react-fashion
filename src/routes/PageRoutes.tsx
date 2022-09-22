@@ -12,7 +12,6 @@ import Technology from "../pages/Technology";
 const PageRoutes = () => {
     return (
         <Routes>
-            <Route path="/" element={<Home />} />
             <Route path="business" element={<Business />} />
             <Route path="entertainment" element={<Entertainment />} />
             <Route path="health" element={<Health />} />
@@ -20,6 +19,7 @@ const PageRoutes = () => {
             <Route path="sports" element={<Sports />} />
             <Route path="technology" element={<Technology />} />
             <Route path="news" element={<NewsDetail />} />
+            <Route path="/" element={<Home />} />
         </Routes>
     );
 }

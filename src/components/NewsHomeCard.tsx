@@ -1,8 +1,16 @@
 import * as React from "react";
 import { useContext } from "react";
-import { NewsContext } from "./context/NewsContext";
+import { useNavigate } from "react-router-dom";
+import NewsContext from "../utility/NewsContext";
 
-const NewsHomeCard = ({ news: { title, urlToImage, url, source, description, publishedAt } }, key) => {
+const NewsHomeCard = ({ news: { title, urlToImage, url, source, description, content, publishedAt } }, key) => {
+    let navigate = useNavigate();
+    const { newsList, setNewsList } = useContext(NewsContext);
+    const getNews = () => {
+        let actionType = 'ADD';
+        setNewsList({ title, urlToImage, url, source, description, publishedAt, content, actionType });
+        navigate("/news");
+    }
     return (
         <div key={key} className="col-md-6 col-lg-4 d-flex align-items-stretch">
             <div className="card-box">
@@ -15,7 +23,7 @@ const NewsHomeCard = ({ news: { title, urlToImage, url, source, description, pub
                 </blockquote>
                 <p className="text-secondary">{source.name}</p>
                 <p className="text-secondary">{new Date(publishedAt).toDateString()}</p>
-                <a href="#" className="btn btn-sm btn-danger float-right">Read more</a>
+                <a href="#" className="btn btn-sm btn-danger float-right" onClick={getNews}>Read more</a>
             </div>
         </div>
     )

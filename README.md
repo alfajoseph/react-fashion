@@ -9,5 +9,5 @@ For module analyzer we have used webpack and babel
 For dynamic API calling we have used https://newsapi.org/
 
 To run the project in local
-- npm run start
+- npm start
 It will automatically open the project in port 9000

@@ -1,19 +1,8 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
-import Header from "../components/Header";
 import NewsHomeCard from "../components/NewsHomeCard";
 import { getNews, getTopNews } from "../services/Api";
-
-interface NewsData {
-    author: any;
-    content: string;
-    description: string;
-    publishedAt: string;
-    source: any;
-    title: string;
-    url: string;
-    urlToImage: string;
-}
+import { NewsData } from "../utility/NewsData";
 
 const Home = () => {
     const [topNewsData, setTopNewsData] = useState<NewsData[]>([]);
@@ -36,7 +25,6 @@ const Home = () => {
 
     return (
         <div>
-            <Header />
             <div className="container">
                 <div className="row mb-5">
                     <div className="col-12">
